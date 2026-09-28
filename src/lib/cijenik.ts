@@ -2,8 +2,12 @@ export type CijenikStavka = {
   usluga: string;
   aktualnaCijena: string;
   sidrenaCijena: string;
-  istaknuto?: boolean;
 };
+
+export const SIDRENA_CIJENA_DATUM = "10.9.2026";
+
+export const CIJENIK_NAPOMENA =
+  "Navedene cijene odnose se na standardne uvjete izvođenja radova i ne uključuju materijal. Konačna cijena može se razlikovati od navedene cjenikom, ovisno o opsegu radova, duljini trase, vrsti podloge, otežanom pristupu i drugim specifičnostima na objektu. Konačna cijena utvrđuje se ponudom prije početka radova.";
 
 export const CIJENIK: CijenikStavka[] = [
   {
@@ -65,7 +69,6 @@ export const CIJENIK: CijenikStavka[] = [
     usluga: "Sat električara",
     aktualnaCijena: "30,00 €/h",
     sidrenaCijena: "30,00 €/h",
-    istaknuto: true,
   },
   {
     usluga: "Servis i otklanjanje kvara",

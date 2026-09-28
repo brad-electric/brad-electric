@@ -7,7 +7,11 @@ import {
   CIJENIK,
   CIJENIK_CSV_FILENAME,
   CIJENIK_CSV_URL,
+  CIJENIK_NAPOMENA,
+  SIDRENA_CIJENA_DATUM,
 } from "@/lib/cijenik";
+
+const sidrenaLabel = `Sidrena cijena (cijena na dan ${SIDRENA_CIJENA_DATUM})`;
 
 export default function CijenikTable() {
   return (
@@ -42,42 +46,25 @@ export default function CijenikTable() {
                   <th className="px-6 py-5 text-sm font-bold text-white uppercase tracking-wide text-right whitespace-nowrap">
                     Aktualna cijena
                   </th>
-                  <th className="px-6 py-5 text-sm font-bold text-white uppercase tracking-wide text-right whitespace-nowrap">
-                    Sidrena cijena
+                  <th className="px-6 py-5 text-sm font-bold text-white text-right max-w-[220px]">
+                    <span className="uppercase tracking-wide">Sidrena cijena</span>
+                    <span className="block normal-case font-medium text-gray text-xs mt-1 tracking-normal">
+                      (cijena na dan {SIDRENA_CIJENA_DATUM})
+                    </span>
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {CIJENIK.map((stavka, i) => (
+                {CIJENIK.map((stavka) => (
                   <tr
                     key={stavka.usluga}
-                    className={`border-b border-secondary/20 last:border-0 transition-colors hover:bg-secondary/10 ${
-                      stavka.istaknuto ? "bg-accent/5" : ""
-                    }`}
+                    className="border-b border-secondary/20 last:border-0 transition-colors hover:bg-secondary/10"
                   >
-                    <td
-                      className={`px-6 py-4 text-white ${
-                        stavka.istaknuto ? "font-bold" : ""
-                      }`}
-                    >
-                      {stavka.usluga}
-                    </td>
-                    <td
-                      className={`px-6 py-4 text-right whitespace-nowrap ${
-                        stavka.istaknuto
-                          ? "font-bold text-accent"
-                          : "text-gray"
-                      }`}
-                    >
+                    <td className="px-6 py-4 text-white">{stavka.usluga}</td>
+                    <td className="px-6 py-4 text-right whitespace-nowrap text-gray">
                       {stavka.aktualnaCijena}
                     </td>
-                    <td
-                      className={`px-6 py-4 text-right whitespace-nowrap ${
-                        stavka.istaknuto
-                          ? "font-bold text-accent"
-                          : "text-gray"
-                      }`}
-                    >
+                    <td className="px-6 py-4 text-right whitespace-nowrap text-gray">
                       {stavka.sidrenaCijena}
                     </td>
                   </tr>
@@ -90,45 +77,28 @@ export default function CijenikTable() {
             {CIJENIK.map((stavka) => (
               <div
                 key={stavka.usluga}
-                className={`p-5 rounded-xl bg-card border border-secondary/20 ${
-                  stavka.istaknuto ? "border-accent/30 bg-accent/5" : ""
-                }`}
+                className="p-5 rounded-xl bg-card border border-secondary/20"
               >
-                <p
-                  className={`text-white mb-4 leading-snug ${
-                    stavka.istaknuto ? "font-bold" : "font-medium"
-                  }`}
-                >
+                <p className="text-white font-medium mb-4 leading-snug">
                   {stavka.usluga}
                 </p>
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   <div>
                     <p className="text-gray/70 mb-1">Aktualna cijena</p>
-                    <p
-                      className={
-                        stavka.istaknuto
-                          ? "font-bold text-accent"
-                          : "text-white"
-                      }
-                    >
-                      {stavka.aktualnaCijena}
-                    </p>
+                    <p className="text-white">{stavka.aktualnaCijena}</p>
                   </div>
                   <div>
-                    <p className="text-gray/70 mb-1">Sidrena cijena</p>
-                    <p
-                      className={
-                        stavka.istaknuto
-                          ? "font-bold text-accent"
-                          : "text-white"
-                      }
-                    >
-                      {stavka.sidrenaCijena}
-                    </p>
+                    <p className="text-gray/70 mb-1 leading-snug">{sidrenaLabel}</p>
+                    <p className="text-white">{stavka.sidrenaCijena}</p>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 p-6 rounded-xl bg-card/80 border border-secondary/20">
+            <p className="text-sm font-semibold text-accent mb-3">Napomena</p>
+            <p className="text-gray text-sm leading-relaxed">{CIJENIK_NAPOMENA}</p>
           </div>
         </AnimatedSection>
 
