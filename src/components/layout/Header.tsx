@@ -12,7 +12,8 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -26,14 +27,18 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-primary/80 backdrop-blur-xl border-b border-secondary/30 shadow-lg shadow-secondary/10"
-          : "bg-transparent"
+          ? "bg-primary/95 backdrop-blur-xl border-b border-secondary/40 shadow-lg shadow-black/20"
+          : "bg-primary/85 backdrop-blur-md border-b border-secondary/20 xl:bg-transparent xl:border-transparent xl:shadow-none"
       }`}
     >
-      <div className="container-custom mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-32 sm:h-36 lg:h-44">
+      <div className="container-custom mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className={`flex items-center justify-between transition-all duration-300 ${
+            scrolled ? "h-16 lg:h-44" : "h-20 sm:h-24 lg:h-44"
+          }`}
+        >
           <Link href="/" className="relative z-10 shrink-0">
             <Image
               src="/logo.png"
@@ -41,7 +46,11 @@ export default function Header() {
               width={640}
               height={438}
               priority
-              className="h-28 sm:h-32 lg:h-40 w-auto"
+              className={`w-auto transition-all duration-300 ${
+                scrolled
+                  ? "h-12 sm:h-14 lg:h-40"
+                  : "h-16 sm:h-20 lg:h-40"
+              }`}
             />
           </Link>
 
@@ -65,13 +74,22 @@ export default function Header() {
             {SITE.phone}
           </a>
 
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="xl:hidden relative z-10 p-2 text-white"
-            aria-label={mobileOpen ? "Zatvori izbornik" : "Otvori izbornik"}
-          >
-            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          <div className="xl:hidden flex items-center gap-2 relative z-10">
+            <a
+              href={SITE.phoneHref}
+              className="flex items-center justify-center w-11 h-11 rounded-lg bg-accent text-primary glow-button"
+              aria-label="Nazovite odmah"
+            >
+              <Phone size={20} />
+            </a>
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2.5 rounded-lg bg-secondary/50 border border-secondary/40 text-white"
+              aria-label={mobileOpen ? "Zatvori izbornik" : "Otvori izbornik"}
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -82,9 +100,9 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="xl:hidden fixed inset-0 top-0 bg-primary/95 backdrop-blur-xl pt-36 lg:pt-48 px-6 pb-8 overflow-y-auto"
+            className="xl:hidden fixed inset-0 top-0 bg-primary/98 backdrop-blur-xl pt-20 sm:pt-24 px-6 pb-8 overflow-y-auto z-40"
           >
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-2 max-h-[calc(100dvh-6rem)] overflow-y-auto">
               {NAV_LINKS.map((link, i) => (
                 <motion.div
                   key={link.href}

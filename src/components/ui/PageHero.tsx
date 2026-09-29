@@ -11,7 +11,7 @@ interface PageHeroProps {
 
 export default function PageHero({ title, subtitle, children }: PageHeroProps) {
   return (
-    <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-28 overflow-hidden">
+    <section className="relative pt-28 sm:pt-36 pb-20 lg:pt-52 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-secondary/30" />
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
 

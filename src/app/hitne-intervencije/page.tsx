@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import ServiceList from "@/components/ui/ServiceList";
-import FloatingCallButton from "@/components/ui/FloatingCallButton";
 import Button from "@/components/ui/Button";
 import { SITE } from "@/lib/constants";
 import { Phone } from "lucide-react";
@@ -34,7 +33,6 @@ export default function HitneIntervencijePage() {
         </div>
       </PageHero>
       <ServiceList services={services} columns={1} />
-      <FloatingCallButton />
     </>
   );
 }

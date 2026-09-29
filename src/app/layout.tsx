@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FloatingCallButton from "@/components/ui/FloatingCallButton";
 import { SITE } from "@/lib/constants";
 import "./globals.css";
 
@@ -145,8 +146,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen antialiased font-sans bg-primary text-white">
         <Header />
-        <main>{children}</main>
+        <main className="pb-24 lg:pb-0">{children}</main>
         <Footer />
+        <FloatingCallButton />
       </body>
     </html>
   );
