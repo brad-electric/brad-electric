@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/odrzavanje",
     "/hitne-intervencije",
     "/o-nama",
-    "/cijenik",
+    "/cjenik",
     "/kontakt",
     "/lan-instalacije",
     "/punjaci",

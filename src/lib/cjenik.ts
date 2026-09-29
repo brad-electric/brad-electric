@@ -1,15 +1,15 @@
-export type CijenikStavka = {
+export type CjenikStavka = {
   usluga: string;
   aktualnaCijena: string;
   sidrenaCijena: string;
 };
 
-export const SIDRENA_CIJENA_DATUM = "10.9.2026";
+export const SIDRENA_CJENA_DATUM = "10.9.2026";
 
-export const CIJENIK_NAPOMENA =
-  "Navedene cijene odnose se na standardne uvjete izvođenja radova i ne uključuju materijal. Konačna cijena može se razlikovati od navedene cjenikom, ovisno o opsegu radova, duljini trase, vrsti podloge, otežanom pristupu i drugim specifičnostima na objektu. Konačna cijena utvrđuje se ponudom prije početka radova.";
+export const CJENIK_NAPOMENA =
+  "Navedene cjene odnose se na standardne uvjete izvođenja radova i ne uključuju materijal. Konačna cjena može se razlikovati od cijena navedenih u cjeniku, ovisno o opsegu radova, duljini trase, vrsti podloge, otežanom pristupu i drugim specifičnostima na objektu. Konačna cjena utvrđuje se ponudom prije početka radova.";
 
-export const CIJENIK: CijenikStavka[] = [
+export const CJENIK: CjenikStavka[] = [
   {
     usluga: "Izvod utičnice – do 15 m trase",
     aktualnaCijena: "30,00 €",
@@ -77,5 +77,5 @@ export const CIJENIK: CijenikStavka[] = [
   },
 ];
 
-export const CIJENIK_CSV_URL = "/cijenik-brad-electric.csv";
-export const CIJENIK_CSV_FILENAME = "cijenik-brad-electric.csv";
+export const CJENIK_CSV_URL = "/cjenik-brad-electric.csv";
+export const CJENIK_CSV_FILENAME = "cjenik-brad-electric.csv";

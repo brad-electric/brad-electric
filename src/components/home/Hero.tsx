@@ -54,7 +54,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="text-gray text-lg mb-10 max-w-xl leading-relaxed"
             >
-              Pouzdana i kvalitetna elektro rješenja na području Rijeke i Primorsko-goranske županije.
+              Pouzdana i kvalitetna rješenja za elektroinstalacije na području Rijeke i Primorsko-goranske županije.
             </motion.p>
 
             <motion.div

@@ -19,7 +19,7 @@ export const NAV_LINKS = [
   { href: "/odrzavanje", label: "Održavanje" },
   { href: "/hitne-intervencije", label: "Hitne intervencije 24/7" },
   { href: "/o-nama", label: "O nama" },
-  { href: "/cijenik", label: "Cijenik" },
+  { href: "/cjenik", label: "Cjenik" },
   { href: "/kontakt", label: "Kontakt" },
 ] as const;
 

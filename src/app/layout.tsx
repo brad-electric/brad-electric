@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name} | Profesionalne elektroinstalacije`,
     description:
-      "Pouzdana i kvalitetna elektro rješenja na području Rijeke i Primorsko-goranske županije.",
+      "Pouzdana i kvalitetna rješenja za elektroinstalacije na području Rijeke i Primorsko-goranske županije.",
     images: [
       {
         url: "/og-image.png",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE.name} | Profesionalne elektroinstalacije`,
     description:
-      "Pouzdana i kvalitetna elektro rješenja na području Rijeke i Primorsko-goranske županije.",
+      "Pouzdana i kvalitetna rješenja za elektroinstalacije na području Rijeke i Primorsko-goranske županije.",
     images: ["/og-image.png"],
   },
   robots: {
